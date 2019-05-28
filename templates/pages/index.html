@@ -15,7 +15,7 @@
           vel nostrum magnam
           voluptatum tempore! Consectetur, id commodi!</p>
         <div class="search">
-          <form action="search.html">
+          <form action="{% url 'search' %}">
             <!-- Form Row 1 -->
             <div class="form-row">
               <div class="col-md-4 mb-3">
@@ -32,8 +32,8 @@
                 <label class="sr-only">State</label>
                 <select name="state" class="form-control">
                   <option selected="true" disabled="disabled">State (All)</option>
-                  {% for key, value in state_choices.items %}
-                  <option value="{{key}}">{{value}}</option>
+                  {% for key,value in state_choices.items %}
+                  <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
@@ -44,16 +44,16 @@
                 <label class="sr-only">Bedrooms</label>
                 <select name="bedrooms" class="form-control">
                   <option selected="true" disabled="disabled">Bedrooms (All)</option>
-                  {% for key, value in bedroom_choices.items %}
-                  <option value="{{key}}">{{value}}</option>
+                  {% for key,value in bedroom_choices.items %}
+                  <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
               <div class="col-md-6 mb-3">
                 <select class="form-control" id="type">
                   <option selected="true" disabled="disabled">Max Price (Any)</option>
-                  {% for key, value in price_choices.items %}
-                  <option value="{{key}}">{{value}}</option>
+                  {% for key,value in price_choices.items %}
+                  <option value="{{ key }}">{{ value }}</option>
                   {% endfor %}
                 </select>
               </div>
